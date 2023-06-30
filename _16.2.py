@@ -2,7 +2,7 @@ class turtle(object):
 
     x = 0
     y = 0
-    s = 2
+    s = 1
 
 
     def go_up(self):
@@ -21,6 +21,7 @@ class turtle(object):
 
     def go_right(self):
         self.x += self.s
+        return self.s
 
 
     def evolve(self):
@@ -38,7 +39,7 @@ class turtle(object):
     def count_moves(self, x, y):
 
         
-        step = (x - self.x) + (y - self.y) 
+        step = abs(x - self.x) + abs(y - self.y) 
 
         return step
 
@@ -46,6 +47,6 @@ class turtle(object):
 T = turtle()
 
 
-print(T.count_moves(5, 6))
+print(T.count_moves(-5, -6), T.go_right(), T.go_down(), T.degrade())
 
 
